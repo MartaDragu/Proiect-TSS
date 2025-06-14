@@ -1,9 +1,0 @@
-Exemplu de date:
-Nume: Marta Dragu
-Email: gatitoazul4@yahoo.com
-Telefon: +40712345678
-IP: 192.168.43.153
-Nume: Gigi Popescu
-Email: gigipopescu1@gmail.com
-Telefon: +4072123242
-IP: 192.165.40.110
