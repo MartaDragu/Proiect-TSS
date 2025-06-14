@@ -4,8 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 from io import StringIO
 
-from your_module_name import check_login_page_gdpr  # înlocuiește cu numele fișierului tău fără `.py`
-
+from your_module_name import Proiect_TSS
 class TestGDPRLoginPage(unittest.TestCase):
 
     @patch('builtins.print')
@@ -27,11 +26,11 @@ class TestGDPRLoginPage(unittest.TestCase):
         mock_response = requests.Response()
         mock_response.status_code = 200
         mock_response._content = str.encode(html_content)
-        mock_response.url = 'https://example.com/login'
+        mock_response.url = 'https://yahoo.com/login'
 
         mock_get.return_value = mock_response
 
-        check_login_page_gdpr("https://example.com/login")
+        check_login_page_gdpr("https://yahoo.com/login")
 
         expected_outputs = [
             "✅ Conexiune criptată (HTTPS activ).",
@@ -61,11 +60,10 @@ class TestGDPRLoginPage(unittest.TestCase):
         mock_response = requests.Response()
         mock_response.status_code = 200
         mock_response._content = str.encode(html_content)
-        mock_response.url = 'http://example.com/login'  # HTTP, nu HTTPS
-
+        mock_response.url = 'http://yahoo.com/login' 
         mock_get.return_value = mock_response
 
-        check_login_page_gdpr("http://example.com/login")
+        check_login_page_gdpr("http://yahoo.com/login")
 
         expected_warnings = [
             "⚠️ Conexiunea nu este criptată",
